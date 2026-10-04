@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Yume Registry ♡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Courier New", monospace;
+      color: #5f4050;
+
+      background-color: #fff4f8;
+      background-image:
+        radial-gradient(#f3b7cc 1px, transparent 1px);
+      background-size: 18px 18px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 35px 18px;
+
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 780px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tiny-top {
+      text-align: center;
+      color: #c66c91;
+      font-size: 13px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .window {
+      background: #fffafd;
+      border: 2px solid #e9a8c1;
+      border-radius: 10px;
+      box-shadow:
+        7px 7px 0 #f4cada,
+        0 12px 35px rgba(143, 78, 105, 0.12);
+      overflow: hidden;
+    }
+
+    .window-bar {
+      background: linear-gradient(to right, #ffd5e5, #ffe8f1);
+      border-bottom: 2px solid #e9a8c1;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #a94f76;
+    }
+
+    .dots {
+      letter-spacing: 3px;
+    }
+
+    .content {
+      padding: 48px 35px 38px;
+      text-align: center;
+    }
+
+    .bow {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #b94f7d;
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 9vw, 72px);
+      line-height: 1;
+      text-shadow: 2px 2px #ffd8e6;
+    }
+
+    .subtitle {
+      margin: 17px auto 28px;
+      max-width: 520px;
+      color: #956075;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .status {
+      display: inline-block;
+      background: #fff0f6;
+      border: 1px dashed #e8a0bd;
+      padding: 7px 12px;
+      border-radius: 20px;
+      color: #b05b80;
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 16px;
+      background: #ffdbe8;
+      color: #8f4765;
+      border: 2px solid #e7a3bd;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      box-shadow: 3px 3px 0 #f3bdd1;
+      transition: 0.15s;
+    }
+
+    .button:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0 #f3bdd1;
+      background: #ffe8f0;
+    }
+
+    .about {
+      text-align: left;
+      background: #fff5f9;
+      border: 1px dashed #e5a1bb;
+      border-radius: 8px;
+      padding: 20px;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .about h2 {
+      margin-top: 0;
+      color: #b4577d;
+      font-family: Georgia, serif;
+      font-size: 21px;
+    }
+
+    .registry-card {
+      margin-top: 22px;
+      background: white;
+      border: 1px solid #ecc0d1;
+      padding: 18px;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .registry-title {
+      color: #ba557e;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 26px;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #a9788c;
+    }
+
+    .footer a {
+      color: #b6537c;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      color: #e8a1bc;
+      opacity: 0.45;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.45;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .content {
+        padding: 38px 20px 30px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="tiny-top">
+      ୨୧ welcome to the yume registry dollhouse ୨୧
+    </div>
+
+    <section class="window">
+
+      <div class="window-bar">
+        <span>♡ yume-registry.exe</span>
+        <span class="dots">♡ ♡ ♡</span>
+      </div>
+
+      <div class="content">
+
+        <div class="bow">୨୧</div>
+
+        <h1>Yume Registry</h1>
+
+        <p class="subtitle">
+          your little corner for loving fictional people way too much ♡
+          <br>
+          an indie yume project made with love
+        </p>
+
+        <div class="status">
+          ● registry online ♡
+        </div>
+
+        <div class="buttons">
+          <a class="button" href="#">♡ Add to Discord</a>
+          <a class="button" href="#">୨୧ Support Server</a>
+          <a class="button" href="privacy.html">♡ Privacy</a>
+          <a class="button" href="terms.html">♡ Terms</a>
+        </div>
+
+        <div class="about">
+
+          <h2>♡ about the registry</h2>
+
+          <p>
+            Yume Registry is a tiny independent project made by one person
+            for the yume community ♡
+          </p>
+
+          <p>
+            I made it because I wanted a cute and simple way for people
+            to keep track of their F/Os, fandoms, relationships and
+            sharing preferences.
+          </p>
+
+          <div class="registry-card">
+            <div class="registry-title">
+              ୨୧ sample registry entry
+            </div>
+
+            ♡ F/O: your beloved fictional person<br>
+            ♡ Fandom: their universe<br>
+            ♡ Sharing: your preference<br>
+            ♡ Relationship: your yumeship
+          </div>
+
+        </div>
+
+        <div class="footer">
+          made &amp; maintained by yanarbite ♡
+          <br>
+          independent project • not affiliated with Discord
+          <br><br>
+
+          <a href="privacy.html">privacy policy</a>
+          ♡
+          <a href="terms.html">terms of service</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function makeHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+
+      const symbols = ["♡", "୨୧", "♥"];
+      heart.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize =
+        (12 + Math.random() * 15) + "px";
+
+      heart.style.animationDuration =
+        (7 + Math.random() * 7) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 15000);
+    }
+
+    setInterval(makeHeart, 1200);
+  </script>
+
+</body>
+</html>
